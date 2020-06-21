@@ -49,4 +49,42 @@
           A.StaA();
         }         
       }
+   
+   * C# static 속성, 필드  
+    static 함수와 동일하게 [클래스명.속성명]으로 사용합니다.   
+    static 필드는 프로그램 실행 후 해당 클래스가 처음으로 사용될 때 한 번 초기화되어 계속 동일한 메모리를 사용합니다.   
+    
+     ex)
+     
+      // 정적 필드   
+      protected static int a;
+      
+      // 정적 속성  
+      public static string ID {get; set;}
+      
+   * C# static 클래스  
+    static 클래스는 모든 클래스 멤버가 static 멤버로 이루어져있습니다.   
+    static 클래스는 public 생성자를 가질 수 없습니다. ( static 클래스는 객체를 생성 할 수 없기 때문 )   
+    static 필드를 초기화하는데에 많이 사용합니다.
+    
+    ex)  
+     // 정적 클래스 정의
+     public static class A{
+      private static int A;
+      
+      // 정적 생성자
+      static A(){
+       A = 1;
+      }
+      
+      public static string Convert(int _num){
+       return _num.ToString();
+      }
+    }
+    
+     // 정적 클래스 사용
+     static void main(){
+      string str = A.Convert(123);
+     }
+
       
